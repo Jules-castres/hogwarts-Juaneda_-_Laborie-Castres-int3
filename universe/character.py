@@ -35,9 +35,6 @@ def add_item(character, key, item):
     character[key].append(item)
     return character
 
-
-
-
 def display_character(character):
     print("Character profile :")
     for i in character.keys():
