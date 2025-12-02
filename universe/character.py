@@ -1,6 +1,6 @@
 def init_character(last_name,first_name,attributes):
     """
-    The def will return your character information
+    The function will return your character information
     :param last_name: string
     :param first_name: string
     :param attributes: dictionary
@@ -14,9 +14,26 @@ def init_character(last_name,first_name,attributes):
     "Attributes": attributes }
     return character
 
-def modify_money(characters,amount):
-    characters["money"]+=amount
-    return characters["money"]
+
+def modify_money(characters, amount):
+    """
+    function will return the modification of the money
+    :param characters: dictionary
+    :param amount: integer
+    :return: none
+    """
+    characters["money"] += amount
+
+def add_item(character, key, item):
+    """
+    Adds an item (string) to one of the character's list fields.
+    :param character: dictionary
+    :param key: string
+    :param item: string
+    :return:dictionary
+    """
+    character[key].append(item)
+    return character
 
 def display_character(character):
     """
