@@ -36,6 +36,11 @@ def add_item(character, key, item):
     return character
 
 def display_character(character):
+    """
+    The function displays profile information by taking types into account.
+    :param character: dict
+    :return: None
+    """
     print("Character profile :")
     for i in character.keys():
         if type(character[i]) == dict:
