@@ -123,7 +123,7 @@ def ask_choice(message,option):
     number_choice = len(option)
     for i in range(1,number_choice+1):
         print(f"{i}: {option[i-1]}")
-    ask_number("Your choice :", 1, number_choice)
+    return ask_number("Your choice :", 1, number_choice)
 
 def load_file(file_path):
     """
