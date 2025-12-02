@@ -1,7 +1,8 @@
 def ask_number(message, min_val=None, max_val=None):
     """
-    :param message: The function ask a number and verify if it is a real number
-                    between min_val and max_val with the potential case of negative numbers then return it if valid.
+    The function ask a number and verify if it is a real number
+    between min_val and max_val with the potential case of negative numbers then return it if valid.
+    :param message: string
     :param min_val: int
     :param max_val: int
     :return: int
@@ -105,4 +106,15 @@ def ask_text(message):
         print("Invalide please try again")
 
 def ask_choice(message,option):
-    return 0
+    """
+    The function displays a menu of option then apply the function ask number for the users to make choice
+    :param message: string
+    :param option: list
+    :return: function ask_number
+    """
+    print(message)
+    number_choice = len(option)
+    for i in range(1,number_choice+1):
+        print(f"{i}: {option[i-1]}")
+    ask_number("Your choice :", 1, number_choice)
+
