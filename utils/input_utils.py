@@ -101,9 +101,14 @@ def ask_number(message, min_val=None, max_val=None):
     return number
 
 def ask_text(message):
+    """
+    The function ask for a string and verify if it's not only composed of space
+    :param message: string
+    :return: string
+    """
     while True:
         txt=input(message).strip
-        if txt == '':
+        if txt != '':
             return txt
         print("Invalide please try again")
 
