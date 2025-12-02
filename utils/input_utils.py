@@ -97,4 +97,12 @@ def ask_number(message, min_val=None, max_val=None):
 
     return number
 
+def ask_text(message):
+    while True:
+        txt=input(message).strip
+        if txt == '':
+            return txt
+        print("Invalide please try again")
 
+def ask_choice(message,option):
+    return 0
