@@ -19,6 +19,11 @@ def modify_money(characters,amount):
     return characters["money"]
 
 def display_character(character):
+    """
+    The function displays profile information by taking types into account.
+    :param character: dict
+    :return: None
+    """
     print("Character profile :")
     for i in character.keys():
         if type(character[i]) == dict:
