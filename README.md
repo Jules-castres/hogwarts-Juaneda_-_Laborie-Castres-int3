@@ -1,1 +1,1 @@
-# hogwarts-Juan-da_-_Laborie-Castres-int3.
+# hogwarts-Juaneda_-_Laborie-Castres-int3.
