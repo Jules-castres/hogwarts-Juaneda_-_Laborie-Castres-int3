@@ -1,3 +1,5 @@
+import json
+
 def ask_number(message, min_val=None, max_val=None):
     """
     The function ask a number and verify if it is a real number
@@ -117,4 +119,17 @@ def ask_choice(message,option):
     for i in range(1,number_choice+1):
         print(f"{i}: {option[i-1]}")
     ask_number("Your choice :", 1, number_choice)
+
+def load_file(file_path):
+    """
+    The function load a file and return it as an python objet (list or dict).
+    :param file_path: JSON file
+    :return: list or dict
+    """
+    with open(file_path,"r", encoding='utf-8') as f:
+        data = json.load(f)
+
+    return data
+
+
 
