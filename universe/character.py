@@ -15,5 +15,5 @@ def init_character(last_name,first_name,attributes):
     return character
 
 def modify_money(characters,amount):
-    characters[3]=amount
-    return characters[3]
+    characters["money"]+=amount
+    return characters["money"]
