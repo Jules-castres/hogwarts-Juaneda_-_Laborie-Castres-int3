@@ -1,4 +1,4 @@
-import input_utils.py
+from utils import input_utils
 def update_house_point(houses,house_name,points):
     """
     The function add or subtract "points" from "house_name" in houses.
