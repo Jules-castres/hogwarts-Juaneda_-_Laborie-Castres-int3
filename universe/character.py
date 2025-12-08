@@ -22,7 +22,7 @@ def modify_money(characters, amount):
     :param amount: integer
     :return: none
     """
-    characters["money"] += amount
+    characters["Money"] += amount
 
 def add_item(character, key, item):
     """
@@ -41,7 +41,8 @@ def display_character(character):
     :param character: dict
     :return: None
     """
-    print("Character profile :")
+    print("\nCharacter profile :")
+    print()
     for i in character.keys():
         if type(character[i]) == dict:
             print(i,":")
