@@ -107,7 +107,7 @@ def ask_text(message):
     :return: string
     """
     while True:
-        txt=input(message).strip
+        txt=input(message).strip()
         if txt != '':
             return txt
         print("Invalide please try again")
