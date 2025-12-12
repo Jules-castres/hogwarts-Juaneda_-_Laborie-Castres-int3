@@ -142,7 +142,7 @@ def buy_supplies(character):
     print()
     print("There the catalog of available items:")
 
-    inventory =  input_utils.load_file("../data/inventory.json")
+    inventory =  input_utils.load_file("data/inventory.json")
     required = ["Magic Wand","Wizard Robe","Potions Book"]
 
     for i in inventory.keys():
@@ -205,3 +205,4 @@ def start_chapter_1():
     meet_hagrid(char)
     buy_supplies(char)
     print("End of the Chapter 1 ! The magic awakens as your adventure starts at Hogwarts... ")
+    return char
