@@ -1,7 +1,7 @@
 from utils import input_utils
 from chapters import chapter_1, chapter_2, chapter_3
 def display_main_menu():
-    return input_utils.ask_choice("Welcome back !",["1. Start Chapter 1 - Arrival in the magical world.","2. Exit the game."])
+    return input_utils.ask_choice("Welcome back !",["Start Chapter 1 - Arrival in the magical world.","Exit the game."])
 
 def launch_menu_choice():
     """
