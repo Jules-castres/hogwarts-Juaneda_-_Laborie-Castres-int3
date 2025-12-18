@@ -56,6 +56,11 @@ def meets_friends(character):
     print("The train continues its journey. Hogwarts Castle appears on the horizon... \n\nYour choices already say a lot about your personality!")
     print(f"Your updated attributes: {character["Attributes"]}")
 
-
-
-print(meets_friends(module_char.init_character('P','H', {'Courage':8,'Intelligence': 8,'Loyalty': 8,'Ambition': 8 })))
+def enter_common_room(character):
+    houses = input_utils.load_file("../data/houses.json")
+    character_house = houses[character["House"]]
+    print("\nYou follow the prefects through the castle corridors...")
+    print(character_house['emoji'], character_house['description'])
+    print(character_house['installation_message'])
+    colors = ", ".join(character_house['colors'])
+    print("\nYour house colors:", colors)
