@@ -57,11 +57,12 @@ def assign_house(character, questions):
         a = input_utils.ask_choice(question[0],question[1])
         update_house_point(houses, question[2][a-1], 3)
 
-    print("Summary of scores:")
+    print("\nSummary of scores:")
     max_point = 0
     name_house = ""
     for name in houses.keys():
         print(f'{name}: {houses[name]} points')
         if houses[name] > max_point:
             name_house = name
+            max_point = houses[name]
     return name_house
