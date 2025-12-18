@@ -40,7 +40,7 @@ def create_character():
     """
     attribute = {"Courage":0,"Intelligence":0, "Loyalty":0, "Ambition":0}
     name = input_utils.ask_text("Enter your character's last name: ")
-    first_name = input_utils.ask_text("Enter your character's last name: ")
+    first_name = input_utils.ask_text("Enter your character's first name: ")
     print("Choose your attributes:")
     for i in attribute.keys():
         number = input_utils.ask_number(f'{i} level (1-10) : ', 1,10)

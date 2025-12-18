@@ -99,4 +99,5 @@ def start_chapter_3(character, houses):
     house.update_house_point(houses, character['House'], character['Points'])
     house.display_winning_house(houses)
     char_module.display_character(character)
+    print("\nEnd chapter 3, well done !! You are now a certified wizard...")
 

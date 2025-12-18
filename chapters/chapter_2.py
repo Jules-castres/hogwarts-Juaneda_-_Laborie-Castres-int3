@@ -62,6 +62,11 @@ def meets_friends(character):
     print(f"Your updated attributes: {character["Attributes"]}")
 
 def enter_common_room(character):
+    """
+    The function displays a message with all the details of the house chosen.
+    :param character: dict
+    :return: None
+    """
     houses = input_utils.load_file("../data/houses.json")
     character_house = houses[character["House"]]
     print("\nYou follow the prefects through the castle corridors...")
@@ -69,6 +74,7 @@ def enter_common_room(character):
     print(character_house['installation_message'])
     colors = ", ".join(character_house['colors'])
     print("\nYour house colors:", colors)
+
 def welcome_message():
     print(" Professor Dumbledore appears before you, his eyes twinkling behind his half-moon spectacles.\n Welcome to Hogwarts, my dear student,” he says warmly. \nWithin these ancient walls, you will discover magic far greater than spells and potions—\nthe magic that lives within yourself.\nChoose your actions wisely, for even the smallest decision can shape your destiny \nAnd above all… remember that help will always be given at Hogwarts to those who ask for it.")
     input("Press Enter to continue : ")
@@ -90,7 +96,7 @@ def sorting_ceremony(character):
     print()
     print(f"The Sorting Hat exclaims : {your_house}!!!\nYou join the {your_house} students to loud cheers!")
     character["House"]=your_house
-print(sorting_ceremony(module_char.init_character('Jean','Magi', {'Courage':8,'Intelligence': 8,'Loyalty': 8,'Ambition': 8 })))
+
 def start_chapter_2(character):
     meets_friends(character)
     input()
