@@ -1,8 +1,10 @@
 from utils import input_utils
 from universe import character as module_char
+from universe import house
 
 def meets_friends(character):
     print("You board the Hogwarts Express. The train slowly departs northward... \nA red-haired boy enters your compartment, looking friendly. ")
+    input("Press Enter to continue : ")
     print("Hi! I'm Ron Weasley. Mind if I sit with you? ")
     ron_message="How do you respond? "
     ron_choice_1=["Sure, have a seat!"," Sorry, I prefer to travel alone."]
@@ -17,6 +19,7 @@ def meets_friends(character):
             if j=='Ambition':
                 character['Attributes'][j]+=1
         print("Ron is crying away from you: -I want my Mommy OUINOUIN BOUHOUHOU \n")
+    input("Press Enter to continue : ")
     print("A girl enters next, already carrying a stack of books. ")
     print("Hello, I'm Hermione Granger. Have you ever read 'A History of Magic'?")
     Hermione_message="How do you respond?"
@@ -32,6 +35,7 @@ def meets_friends(character):
             if h=='Courage':
                 character['Attributes'][h]+=1
         print("Hermione is disappointed: -I wasn't expecting anything from you and i'm still disappointed. \n")
+    input("Press Enter to continue : ")
 
     print("Then a blonde boy enters, looking arrogant. ")
     print("I'm Draco Malfoy. It's best to choose your friends carefully from the start, don't you think? ")
@@ -53,9 +57,42 @@ def meets_friends(character):
             if Draco_3=='Courage':
                 character['Attributes'][Draco_3]+=1
         print("Draco frowned: - You mustn't know who my father is.I'll make you regret it.\n")
+    input("Press Enter to continue : ")
     print("The train continues its journey. Hogwarts Castle appears on the horizon... \n\nYour choices already say a lot about your personality!")
     print(f"Your updated attributes: {character["Attributes"]}")
 
 
 
-print(meets_friends(module_char.init_character('P','H', {'Courage':8,'Intelligence': 8,'Loyalty': 8,'Ambition': 8 })))
+
+def welcome_message():
+    print(" Professor Dumbledore appears before you, his eyes twinkling behind his half-moon spectacles.\n Welcome to Hogwarts, my dear student,” he says warmly. \nWithin these ancient walls, you will discover magic far greater than spells and potions—\nthe magic that lives within yourself.\nChoose your actions wisely, for even the smallest decision can shape your destiny \nAnd above all… remember that help will always be given at Hogwarts to those who ask for it.")
+    input("Press Enter to continue : ")
+
+def sorting_ceremony(character):
+    print("The sorting ceremony begins in the Great Hall...\n The Sorting Hat observes you for a long time before asking its \nquestions: ")
+    sorting_Hat_choice_1 = [ ( "You see a friend in danger. What do you do?",
+                               ["Rush to help", "Think of a plan", "Seek help", "Stay calm and observe"],
+                               ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"] ),
+                             ("\nWhich trait describes you best?",
+                                ["Brave and loyal", "Cunning and ambitious", "Patient and hardworking", "Intelligent and curious"],
+                                  ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"]),
+                             ("\nWhen faced with a difficult challenge, you...",
+                                 ["Charge in without hesitation", "Look for the best strategy", "Rely on your friends","Analyze the problem"],
+                                 ["Gryffindor", "Slytherin", "Hufflepuff", "Ravenclaw"])
+                             ]
+    print()
+    your_house=house.assign_house(character,sorting_Hat_choice_1)
+    print()
+    print(f"The Sorting Hat exclaims : {your_house}!!!\nYou join the {your_house} students to loud cheers!")
+    character["House"]=your_house
+print(sorting_ceremony(module_char.init_character('Jean','Magi', {'Courage':8,'Intelligence': 8,'Loyalty': 8,'Ambition': 8 })))
+def start_chapter_2(character):
+    meets_friends(character)
+    input()
+    welcome_message()
+    input()
+    sorting_ceremony(character)
+    input()
+    module_char.display_character(character)
+    input()
+    print("The second chapter has now come to an end.")
