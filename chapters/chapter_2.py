@@ -61,9 +61,14 @@ def meets_friends(character):
     print("The train continues its journey. Hogwarts Castle appears on the horizon... \n\nYour choices already say a lot about your personality!")
     print(f"Your updated attributes: {character["Attributes"]}")
 
-
-
-
+def enter_common_room(character):
+    houses = input_utils.load_file("../data/houses.json")
+    character_house = houses[character["House"]]
+    print("\nYou follow the prefects through the castle corridors...")
+    print(character_house['emoji'], character_house['description'])
+    print(character_house['installation_message'])
+    colors = ", ".join(character_house['colors'])
+    print("\nYour house colors:", colors)
 def welcome_message():
     print(" Professor Dumbledore appears before you, his eyes twinkling behind his half-moon spectacles.\n Welcome to Hogwarts, my dear student,” he says warmly. \nWithin these ancient walls, you will discover magic far greater than spells and potions—\nthe magic that lives within yourself.\nChoose your actions wisely, for even the smallest decision can shape your destiny \nAnd above all… remember that help will always be given at Hogwarts to those who ask for it.")
     input("Press Enter to continue : ")
