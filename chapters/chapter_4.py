@@ -14,7 +14,7 @@ def introduction_chapter_4():
 
 def dementor_choice():
     spell_message="What do you do :"
-    spell_option=(" Attack the Dementor","Defend yourself")
+    spell_option=[" Attack the Dementor","Defend yourself"]
     spell_choice = input_utils.ask_choice(spell_message,spell_option)
     if spell_choice==1:
         print("You raise your wand, but nothing happens.\nYour spells are useless against such a creature.\nA powerful force throws you backward.\nYou crash to the ground, your vision fading.\nYour body feels heavy.\nYou are on the verge of losing consciousness.")
@@ -58,7 +58,7 @@ def player_choice_dementor():
 def resolve_dementor_encounter(character):
         choice = player_choice_dementor()
         if choice == "patronus":
-            if "Expecto Patronum" in character["Spells"]:
+            if "Expecto Patronum" in character.get("Spells", []):
                 print("\nYou focus on a happy memory.\nA bright silver light bursts from your wand.\nThe Dementor screams and disappears.\n")
                 return True
             else:
@@ -145,7 +145,7 @@ def werewolf_fight(character):
 
     defending=False
 
-    while hp > 0 or werewolf_hp> 0:
+    while hp > 0 and werewolf_hp> 0:
         print(f"\nYour HP: {hp} | Werewolf HP : {werewolf_hp}")
         if turn=="player":
             defending=False
