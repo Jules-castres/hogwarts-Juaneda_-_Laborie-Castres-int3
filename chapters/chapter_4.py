@@ -4,7 +4,7 @@ from utils import input_utils
 import random
 
 def introduction_chapter_4():
-    print("Night has fallen over Hogwarts.\nA strange cold spreads through the air as you walk through the corridors.\nWithout understanding why, you feel irresistibly drawn outside.\nYour mind feels foggy.\nYour steps carry you forward, as if guided by an invisible force.")
+    print("\nNight has fallen over Hogwarts.\nA strange cold spreads through the air as you walk through the corridors.\nWithout understanding why, you feel irresistibly drawn outside.\nYour mind feels foggy.\nYour steps carry you forward, as if guided by an invisible force.")
     print()
     input("Press Enter to regain consciousness:")
     print()
@@ -13,26 +13,28 @@ def introduction_chapter_4():
     input("Press Enter to continue :")
 
 def dementor_choice():
-    spell_message=("What do you do :")
+    spell_message="What do you do :"
     spell_option=(" Attack the Dementor","Defend yourself")
     spell_choice = input_utils.ask_choice(spell_message,spell_option)
     if spell_choice==1:
         print("You raise your wand, but nothing happens.\nYour spells are useless against such a creature.\nA powerful force throws you backward.\nYou crash to the ground, your vision fading.\nYour body feels heavy.\nYou are on the verge of losing consciousness.")
     if spell_choice==2:
-        print("Your defense spell is useless against such a creature.\nA powerful force throws you backward.\nYou crash to the ground, your vision fading.\nYour body feels heavy.\nYou are on the verge of losing consciousness.")
+        print("Your defense spell is useless against such a creature.\nA powerful force throws you backward.\nYou crash to the ground, your vision fading.\nYour body feels heavy.\nYou are on the verge of losing consciousness.\n")
 
 def Learning_expecto_patronum(character):
+    input("Press Enter to continue : ")
     print("As darkness closes in, a memory surfaces in your mind.\nYou hear the calm voice of one of your professors:\nThere is only one spell that can repel a Dementor.\nIt requires focus, hope, and a truly happy memory.\nExpecto Patronum.")
     print()
+    input("Press Enter to continue")
     print("You feel something awaken deep inside you.\nwarm light forms at the tip of your wand.\nYou have learned a new spell: Expecto Patronum.")
     attempts=0
     while attempts<3:
        success=random.randint(1,2)
        if success==1:
-           if "spells" not in character:
-               character["spells"]=[]
-           if "Expecto Patronum" not in character["spells"]:
-               character["spells"].append("Expecto Patronum")
+           if "Spells" not in character:
+               character["Spells"]=[]
+           if "Expecto Patronum" not in character["Spells"]:
+               character["Spells"].append("Expecto Patronum")
            print("You now can use Expecto Patronum:")
            return True
        else:
@@ -48,7 +50,7 @@ def player_choice_dementor():
     your_choice_dementor=["Cast Expecto Patronum","Try to escape"]
     your_choice =input_utils.ask_choice(dementor_message,your_choice_dementor)
 
-    if your_choice == "1":
+    if your_choice == 1:
         return "patronus"
     else:
         return "escape"
@@ -77,7 +79,7 @@ def marauder_map():
     print("A message slowly writes itself on the parchment:\n\nI solemnly swear that I am up to no good.")
     print("The map comes to life.\nFootsteps begin to move across the corridors.\nOne name catches your attention.\nAn unknown figure.\nMoving quickly.\nHeading toward the grounds.")
     input("Press Enter to continue : ")
-    print("\nYou follow the moving footsteps on the map.\nThe corridors are silent.\nTorches flicker on the walls as you move through the castle.\The map shows the figure changing direction.\nIt is heading toward the Whomping Willow.\nYou must decide how to proceed.")
+    print("\nYou follow the moving footsteps on the map.\nThe corridors are silent.\nTorches flicker on the walls as you move through the castle.\nThe map shows the figure changing direction.\nIt is heading toward the Whomping Willow.\nYou must decide how to proceed.")
 
 def track_enemy_with_map():
     turns=5
@@ -137,13 +139,13 @@ def werewolf_fight(character):
 
     player_start=arrived_in_time or courage>=10
     if player_start:
-        turn ="Player"
+        turn ="player"
     else:
         turn="wolf"
 
     defending=False
 
-    while hp >0 or werewolf_hp>0:
+    while hp > 0 or werewolf_hp> 0:
         print(f"\nYour HP: {hp} | Werewolf HP : {werewolf_hp}")
         if turn=="player":
             defending=False
@@ -182,6 +184,7 @@ def werewolf_fight(character):
             turn = "wolf"
         else:
             print("#####IT'S THE WEREWOLF TURN#####")
+            input("Press Enter to continue : ")
             if defending:
                 print("You avoid the werewolf's attack!")
             else:
@@ -192,7 +195,7 @@ def werewolf_fight(character):
     if werewolf_hp <= 0:
         print("\nThe werewolf lets out a final howl.\nHis body slowly transforms back into a human.\nHe collapses, confused and exhausted.")
         return True
-    else:
+    elif hp<=0:
         print("\nYour strength fades.\nYou stumble backward...\nAnd fall from the cliff.\nYou will be remembered as the student killed by the werewolf.")
         return False
 
@@ -204,12 +207,8 @@ def start_chapter_4(character):
     print()
     Learning_expecto_patronum(character)
     print()
-    player_choice_dementor()
-    print()
     resolve_dementor_encounter(character)
     print()
     marauder_map()
-    print()
-    track_enemy_with_map()
     print()
     werewolf_fight(character)

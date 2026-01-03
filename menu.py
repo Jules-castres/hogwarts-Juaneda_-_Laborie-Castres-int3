@@ -1,5 +1,5 @@
 from utils import input_utils
-from chapters import chapter_1, chapter_2, chapter_3
+from chapters import chapter_1, chapter_2, chapter_3, chapter_4
 def display_main_menu():
     return input_utils.ask_choice("Welcome back !",["Start Chapter 1 - Arrival in the magical world.","Exit the game."])
 
@@ -22,3 +22,4 @@ def launch_menu_choice():
         character = chapter_1.start_chapter_1()
         chapter_2.start_chapter_2(character)
         chapter_3.start_chapter_3(character, houses)
+        chapter_4.start_chapter_4(character)
