@@ -207,8 +207,11 @@ def start_chapter_4(character):
     print()
     Learning_expecto_patronum(character)
     print()
-    resolve_dementor_encounter(character)
-    print()
-    marauder_map()
-    print()
-    werewolf_fight(character)
+    win_dementor=resolve_dementor_encounter(character)
+    if not win_dementor:
+        print("==========   YOU LOST   ==========")
+    else:
+        print()
+        marauder_map()
+        print()
+        werewolf_fight(character)
