@@ -3,10 +3,7 @@ from utils import input_utils
 
 
 def introduction():
-    """
-    the function displays a text of introduction for the chapter 1
-    :return: None
-    """
+
     print("=" * 60)
     print("     WELCOME TO THE WIZARDING WORLD")
     print("=" * 60)
@@ -52,10 +49,7 @@ def create_character():
 
 
 def receive_letter():
-    """
-    The function display a script when the character receive the letter. Interaction with the player with input.
-    :return: None
-    """
+
     print("An owl flies through the window, delivering a letter")
     print("sealed with the Hogwarts crest...")
     input("Press Enter to open the letter...")
@@ -106,11 +100,7 @@ def receive_letter():
 
 
 def meet_hagrid(character):
-    """
-    The function display the interaction with Hagrid and let the player make the choice to follow him or not.
-    :param character: dict
-    :return: None
-    """
+
     print("\n A giant man appears at the door, covered in snow.\n")
 
     print('Hagrid: "Hello ' + character["First Name"] + '! I\'m Rubeus Hagrid.')
@@ -132,12 +122,7 @@ def meet_hagrid(character):
     print("Hagrid leads you towards Diagon Alley...\n")
 
 def buy_supplies(character):
-    """
-    The function displays the Diagon Alley with supplies and allow the player to buy the required supplies
-    same thing with pets + game over if not enough money
-    :param character: dict
-    :return: display_character
-    """
+
     print("Welcome to Diagon Alley!")
     print()
     print("There the catalog of available items:")

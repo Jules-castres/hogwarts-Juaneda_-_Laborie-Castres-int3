@@ -3,12 +3,7 @@ from universe import character as module_char
 from universe import house
 
 def meets_friends(character):
-    """This function depicts the journey on the Hogwarts Express and the first meeting with Ron,
-Hermione, and Draco. At each encounter, the player chooses from several options.
-Each choice effects one of the character’s attributes.
-    :param character: Dictionary
-    :return: none
-    """
+
     print("You board the Hogwarts Express. The train slowly departs northward... \nA red-haired boy enters your compartment, looking friendly. ")
     input("Press Enter to continue : ")
     print("Hi! I'm Ron Weasley. Mind if I sit with you? ")
@@ -77,20 +72,12 @@ def enter_common_room(character):
     print("\nYour house colors:", colors)
 
 def welcome_message():
-    """
-    it's just a welcome message from Dumbledore
-    :return: none
-    """
 
     print("Professor Dumbledore appears before you, his eyes twinkling behind his half-moon spectacles.\nWelcome to Hogwarts, my dear student,” he says warmly. \nWithin these ancient walls, you will discover magic far greater than spells and potions—\nthe magic that lives within yourself.\nChoose your actions wisely, for even the smallest decision can shape your destiny \nAnd above all… remember that help will always be given at Hogwarts to those who ask for it.")
     input("Press Enter to continue : ")
 
 def sorting_ceremony(character):
-    """
-    This function conducts the Sorting Hat ceremony. Asks the player to answer a mini personality quiz consisting of three questions and gives the House.
-    :param character: dictionary
-    :return: none
-    """
+
     print("The sorting ceremony begins in the Great Hall...\n The Sorting Hat observes you for a long time before asking its \nquestions: ")
     sorting_Hat_choice_1 = [ ( "You see a friend in danger. What do you do?",
                                ["Rush to help", "Think of a plan", "Seek help", "Stay calm and observe"],
@@ -110,12 +97,7 @@ def sorting_ceremony(character):
     input("Press Enter to continue : ")
 
 def start_chapter_2(character):
-    """
-    This function coordinates the entire course of Chapter 2. It calls the other functions in the
-    following order:
-    :param character:
-    :return:none
-    """
+
     meets_friends(character)
     print()
     welcome_message()

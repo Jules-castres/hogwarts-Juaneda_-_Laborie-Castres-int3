@@ -5,12 +5,7 @@ from universe import house
 import random
 
 def learn_spells(character, file_path="data/spells.json"):
-    """
-    The function randomly chose 5 spells (3 utility, 1 defensive, 1 offensive) and displays them
-    :param character: dict
-    :param file_path: link access to spells
-    :return: display the new spells of the character
-    """
+
     all_spells = input_utils.load_file(file_path)
     print("You begin your magic lessons at Hogwarts...")
 
@@ -63,13 +58,7 @@ def learn_spells(character, file_path="data/spells.json"):
     print("=" * 60)
 
 def magic_quiz(character,  file_path="data/magic_quiz.json"):
-    """
-    The function ask 4 questions randomly chosen  of knowledge and add 25 points to the player at each good answer
-    (we create the key "Points" in the character dictionary)
-    :param character: dict
-    :param file_path: JSON file
-    :return: character (dict)
-    """
+
     magic_quiz = input_utils.load_file(file_path)
     questions = []
     points = 0

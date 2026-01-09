@@ -4,10 +4,11 @@ from utils import input_utils
 import random
 
 def introduction_chapter_4():
+    print("\nWelcome to chapter 4... ")
+    print()
     print("\nNight has fallen over Hogwarts.\nA strange cold spreads through the air as you walk through the corridors.\nWithout understanding why, you feel irresistibly drawn outside.\nYour mind feels foggy.\nYour steps carry you forward, as if guided by an invisible force.")
     print()
     input("Press Enter to regain consciousness:")
-    print()
     print("You are standing near a dark and silent lake.\nThe surface of the water is perfectly still.\nThe forest looms behind you, heavy and quiet.")
     print("A deep chill grips your chest.\nFrom the shadows between the trees, a tall dark figure slowly emerges.\n\nIts presence drains all warmth and happiness from your body.\n\nA Dementor.\n\nFear invades your thoughts.\nYour legs feel weak.\nYour breath becomes shallow.\nYou must act.")
     input("Press Enter to continue :")

@@ -1,22 +1,12 @@
 from utils import input_utils
 def update_house_point(houses,house_name,points):
-    """
-    The function add or subtract "points" from "house_name" in houses.
-    :param houses: dict
-    :param house_name: string
-    :param points: int
-    :return: None
-    """
+
     for name in houses.keys():
         if name == house_name:
             houses[name] += points
 
 def display_winning_house(houses):
-    """
-    the function displays the winning house(s)
-    :param houses: dict
-    :return: None
-    """
+
     house = []
     point = 0
     for name in houses.keys():
@@ -31,12 +21,7 @@ def display_winning_house(houses):
         print(f'The house {", ".join(house)} is the winner with {point} points !')
 
 def assign_house(character, questions):
-    """
-    The function assign houses by the answer of the questions
-    :param character: dict
-    :param questions: list of tuple
-    :return:
-    """
+
     houses = {"Gryffindor": 0,
             "Slytherin": 0,
             "Hufflepuff": 0,

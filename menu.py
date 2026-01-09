@@ -4,10 +4,7 @@ def display_main_menu():
     return input_utils.ask_choice("Welcome back !",["Start Chapter 1 - Arrival in the magical world.","Exit the game."])
 
 def launch_menu_choice():
-    """
-    The function display the choices to begin the game
-    :return: none
-    """
+
     houses = {
         "Gryffindor": 0,
         "Slytherin": 0,
