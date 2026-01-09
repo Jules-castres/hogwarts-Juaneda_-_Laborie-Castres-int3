@@ -125,7 +125,7 @@ def track_enemy_with_map():
 
 def werewolf_fight(character):
     hp=3
-    werewolf_hp=5
+    werewolf_hp=4
     courage = character["Attributes"]["Courage"]
     arrived_in_time=track_enemy_with_map()
     if arrived_in_time:
@@ -212,7 +212,7 @@ def start_chapter_4(character):
     if not win_dementor:
         print("==========   YOU LOST   ==========")
     else:
-        print()
+        input("Press Enter to continue : ")
         marauder_map()
         print()
         werewolf_fight(character)
